@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "343300675078",
+    "firebase_url": "https://eazzy-shopping-system.firebaseio.com",
+    "project_id": "eazzy-shopping-system",
+    "storage_bucket": "eazzy-shopping-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343300675078:android:d842af33038fad5c",
+        "android_client_info": {
+          "package_name": "info.androidhive.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343300675078-3e36h9jq096m2h302q55vqi3t4iphics.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.androidhive.firebase",
+            "certificate_hash": "b5a58fdbbccbd70e5d3cd58415b3b592c7b9b27b"
+          }
+        },
+        {
+          "client_id": "343300675078-amj41s34kreapkvgbtbj62rv3jthf0dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANB1UcdBg87ZdzmB5ItY4wm2STCyKOcUU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343300675078-amj41s34kreapkvgbtbj62rv3jthf0dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
