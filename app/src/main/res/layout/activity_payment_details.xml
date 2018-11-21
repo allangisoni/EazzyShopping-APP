@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PaymentDetailsActivity">
+
+    <TextView
+        android:id="@+id/tvProductTotals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:layout_marginTop="152dp"
+        android:textSize="18sp"
+        />
+
+    <Button
+        android:layout_marginTop="54dp"
+        android:id="@+id/buttonProcessPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Procees payment"
+        android:background="@color/btn_logut_bg"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

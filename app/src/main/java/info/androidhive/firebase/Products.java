@@ -1,8 +1,12 @@
 package info.androidhive.firebase;
 
+import android.widget.ImageView;
+
 public class Products {
 
     public String productName, productCategory, productDescription;
+
+    public String productImageView;
 
     public double productPrice;
 
@@ -11,9 +15,18 @@ public class Products {
 
     }
 
+    public Products(String productName, String productCategory, String productDescription, double productPrice, String productImageView){
+
+        this.productName = productName;
+        this.productCategory = productCategory;
+        this.productDescription = productDescription;
+        this.productPrice = productPrice;
+        this.productImageView = productImageView;
+    }
+
 
     public String getProductName() {
-        return productName;
+        return "Product Name:" +" "+ productName;
     }
 
     public void setProductName(String productName) {
@@ -21,7 +34,7 @@ public class Products {
     }
 
     public String getProductCategory() {
-        return productCategory;
+        return "Product Category:" +" "+ productCategory;
     }
 
     public void setProductCategory(String productCategory) {
@@ -29,7 +42,7 @@ public class Products {
     }
 
     public String getProductDescription() {
-        return productDescription;
+        return "Product Description:" +" "+productDescription;
     }
 
     public void setProductDescription(String productDescription) {
@@ -37,10 +50,19 @@ public class Products {
     }
 
     public double getProductPrice() {
-        return productPrice;
+        return   productPrice;
     }
 
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
+    }
+
+
+    public String getProductImageView() {
+        return productImageView;
+    }
+
+    public void setProductImageView(String productImageView) {
+        this.productImageView = productImageView;
     }
 }

@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
@@ -13,10 +15,18 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
     List<Products> products;
     Context context;
 
-    public  ProductsAdapter(List<Products> products,Context context) {
+    private final OnItemClickListener listener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(Products products);
+    }
+
+    public  ProductsAdapter(List<Products> products,Context context, OnItemClickListener listener) {
 
         this.products = products;
         this.context = context;
+        this.listener = listener;
     }
 
 
@@ -30,15 +40,12 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHolder> {
     @Override
     public void onBindViewHolder(ProductsViewHolder holder, int position) {
 
-        Products product = products.get(position);
-
-        holder.tvProductName.setText(product.getProductName());
-
+        holder.bind(products.get(position),listener);
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return products.size();
     }
 }
