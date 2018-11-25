@@ -1,8 +1,10 @@
 package info.androidhive.firebase;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
-public class Products {
+public class Products implements Parcelable {
 
     public String productName, productCategory, productDescription;
 
@@ -26,7 +28,7 @@ public class Products {
 
 
     public String getProductName() {
-        return "Product Name:" +" "+ productName;
+        return  productName;
     }
 
     public void setProductName(String productName) {
@@ -42,7 +44,7 @@ public class Products {
     }
 
     public String getProductDescription() {
-        return "Product Description:" +" "+productDescription;
+        return productDescription;
     }
 
     public void setProductDescription(String productDescription) {
@@ -65,4 +67,42 @@ public class Products {
     public void setProductImageView(String productImageView) {
         this.productImageView = productImageView;
     }
+
+    protected Products(Parcel in) {
+        productName= in.readString();
+        productCategory = in.readString();
+        productDescription = in.readString();
+        productPrice = in.readDouble();
+        productImageView= in.readString();
+    }
+
+
+
+    public static final Creator<Products> CREATOR = new Creator<Products>() {
+        @Override
+        public Products createFromParcel(Parcel in) {
+            return new Products(in);
+        }
+
+        @Override
+        public Products[] newArray(int size) {
+            return new Products[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(productName);
+        dest.writeString(productCategory);
+        dest.writeString(productDescription);
+        dest.writeDouble(productPrice);
+        dest.writeString(productImageView);
+    }
+
+
 }

@@ -48,7 +48,7 @@ public class MainDashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainDashboardActivity.this, ProductActivity.class);
+                Intent intent = new Intent(MainDashboardActivity.this, ViewUserTransactions.class);
 
                 startActivity(intent);
 

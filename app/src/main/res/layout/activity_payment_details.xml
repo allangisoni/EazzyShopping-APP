@@ -1,31 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".PaymentDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        android:id="@+id/appBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <TextView
         android:id="@+id/tvProductTotals"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total Amount"
-        android:layout_gravity="center"
         android:padding="8dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="162dp"
         android:textSize="18sp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_below="@id/appBar"
         />
 
     <Button
-        android:layout_marginTop="54dp"
         android:id="@+id/buttonProcessPayment"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text="Procees payment"
         android:background="@color/btn_logut_bg"
-        android:layout_gravity="center"/>
-
-</LinearLayout>
+        android:layout_gravity="center"
+        android:layout_below="@id/tvProductTotals"
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

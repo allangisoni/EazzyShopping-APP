@@ -101,19 +101,22 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 }
-                                else if(inputEmail.getText().toString() == "Administrator@gmail.com")
+                               /** else if(inputEmail.getText().toString() == "Administrator@gmail.com")
                                 {
 
+
+                                    Intent intent = new Intent(LoginActivity.this, MainDashboardActivity.class);
+                                    startActivity(intent);
+                                    finish();
+
+
+                                    } **/
+
+                                    else {
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
 
-                                    }
-
-                                    else {
-                                    Intent intent = new Intent(LoginActivity.this, MainDashboardActivity.class);
-                                    startActivity(intent);
-                                    finish();
                                 }
                             }
                         });

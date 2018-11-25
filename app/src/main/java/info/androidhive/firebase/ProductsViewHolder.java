@@ -21,7 +21,7 @@ public class ProductsViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         tvProductName =(TextView) itemView.findViewById(R.id.tvProductName);
-        tvProductCategory =(TextView) itemView.findViewById(R.id.tvProductCategory);
+//        tvProductCategory =(TextView) itemView.findViewById(R.id.tvProductCategory);
         tvProductDescription =(TextView) itemView.findViewById(R.id.tvProductDescription);
         tvProductPrice =(TextView) itemView.findViewById(R.id.tvProductPrice);
         ivProductImage = (ImageView) itemView.findViewById(R.id.ivProductImage);
@@ -30,10 +30,13 @@ public class ProductsViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(final Products products, final ProductsAdapter.OnItemClickListener listener) {
 
-        Picasso.get().load(products.getProductImageView()).error(R.drawable.ic_telly).into(ivProductImage);
+        Picasso.get().load(products.getProductImageView()).error(R.drawable.smarttv).into(ivProductImage);
         tvProductName.setText(products.getProductName());
-        tvProductCategory.setText(products.getProductCategory());
+       // tvProductCategory.setText(products.getProductCategory());
         tvProductDescription.setText(products.getProductDescription());
+        tvProductPrice.setText("Ksh."+ " " + Double.toString(products.getProductPrice()));
+
+       // tvProductCategory.setVisibility(View.INVISIBLE);
 
 
         itemView.setOnClickListener(new View.OnClickListener() {
@@ -41,12 +44,18 @@ public class ProductsViewHolder extends RecyclerView.ViewHolder {
                 listener.onItemClick(products);
                 if (getAdapterPosition() != RecyclerView.NO_POSITION) {
 
-                    List<Products> productsList = new ArrayList<>();
-                    productsList.add(products);
+                   // List<Products> productsList = new ArrayList<>();
+                   // productsList.add(products);
+
+                    Intent intent = new Intent(itemView.getContext(),  SaleActivity.class);
+                    intent.putExtra("shoppingItems", products);
+                    itemView.getContext().startActivity(intent);
 
 
                     //Toast.makeText(itemView.getContext(), "You clicked" + " " + getAdapterPosition(), Toast.LENGTH_LONG).show();
                 }
+
+
             }
         });
 

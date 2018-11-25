@@ -9,26 +9,28 @@
     <Button
         android:id="@+id/btnBuyItems"
         style="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="166dp"
         android:background="@color/colorPrimaryDark"
         android:text="Buy Items"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:layout_marginLeft="46dp"/>
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"/>
 
     <Button
         android:id="@+id/btnViewBoughtItems"
         style="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="56dp"
         android:background="@color/colorPrimaryDark"
         android:text="Sales"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:layout_marginLeft="66dp"
-        android:layout_toRightOf="@id/btnBuyItems"/>
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
+        android:layout_below="@id/btnBuyItems"/>
 
 </RelativeLayout>

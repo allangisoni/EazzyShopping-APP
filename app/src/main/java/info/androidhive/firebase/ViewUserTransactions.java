@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,6 +28,10 @@ public class ViewUserTransactions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_user_transactions);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rvUserTransactions);
 
@@ -43,7 +48,6 @@ public class ViewUserTransactions extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         getDataFromServer();
-
 
 
     }

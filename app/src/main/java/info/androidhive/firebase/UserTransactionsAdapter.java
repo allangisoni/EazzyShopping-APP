@@ -31,10 +31,16 @@ public class UserTransactionsAdapter extends RecyclerView.Adapter<UserTransction
 
         CartModel cartModel = cartModelList.get(position);
 
-        holder.cartProductName.setText(cartModel.getCartProductName());
-        holder.cartProductPrice.setText(Double.toString(cartModel.getCartProductPrice()));
-        holder.cartProductQuantity.setText(cartModel.getCartProductQuantity());
-        holder.cartProductSubTotals.setText(Double.toString(cartModel.getCartProductSubTotals()));
+       // holder.cartProductName.setText(cartModel.getCartProductName());
+        //holder.cartProductPrice.setText(Double.toString(cartModel.getCartProductPrice()));
+       // holder.cartProductQuantity.setText(c);
+        //holder.cartProductSubTotals.setText(Double.toString(cartModel.getCartProductSubTotals()));
+
+
+        holder.cartProductName.setText("Product Name:"+" " +cartModel.getCartProductName());
+        holder.cartProductPrice.setText("Product Price:"+" " +Double.toString(cartModel.getCartProductPrice()));
+        holder.cartProductQuantity.setText("Product Quantity:"+" " +Integer.toString(3));
+        holder.cartProductSubTotals.setText("Product SubTotals"+" " +"Ksh."+Double.toString(cartModel.getCartProductSubTotals()));
     }
 
     @Override

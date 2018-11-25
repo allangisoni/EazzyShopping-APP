@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,14 +20,19 @@ public class ProductActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<Products> productsList;
+    Products productList= new Products();
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_product);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.app_name));
+        setSupportActionBar(toolbar);
+
         productsList = new ArrayList<>();
+
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rvProducts);
 
@@ -34,13 +41,19 @@ public class ProductActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new GridLayoutManager(this, 2);
+       // mLayoutManager = new GridLayoutManager(this, 2);
+        mLayoutManager = new LinearLayoutManager(this);
+
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
         mAdapter = new ProductsAdapter(productsList, this, new ProductsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Products products) {
+
+
+
+               // productList = products;
 
             }
         });
@@ -54,11 +67,39 @@ public class ProductActivity extends AppCompatActivity {
 
     private void getProducts(){
 
-        Products products = new Products("Samsung 32 inch smart TV", "Electronic Devices", "This is the best television of the 21st century", 32000.00,"https://rukminim1.flixcart.com/image/832/832/television/z/b/6/samsung-32j4003-original-imaezvg8eynmheds.jpeg?q=70");
+        Products products = new Products("Samsung 32 inch smart TV", "Electronic Devices", "Best Tv of the 21st century", 32000.00,"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
         productsList.add(products);
 
 
-        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "This is the best television of the 21st century",  52000.00, "https://rukminim1.flixcart.com/image/832/832/television/z/b/6/samsung-32j4003-original-imaezvg8eynmheds.jpeg?q=70");
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 32 inch smart TV", "Electronic Devices", "Best Tv of the 21st century", 32000.00,"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
+        productsList.add(products);
+
+        products = new Products("Samsung 40 inch smart TV", "Electronic Devices", "Best Tv of the 21st century",  52000.00, "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjasKfnr-_eAhVP2xoKHXydBwIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.currys.co.uk%2Fgbuk%2Ftv-buyers-guide-1959-commercial.html&psig=AOvVaw2P2vl-CobQ1Q-MWRV9YsVi&ust=1543229423998125");
         productsList.add(products);
 
         mAdapter.notifyDataSetChanged();
@@ -83,7 +124,14 @@ public class ProductActivity extends AppCompatActivity {
 
             case R.id.checkoutItems:
 
-                startActivity(new Intent(ProductActivity.this, SaleActivity.class));
+               // Intent intent = new Intent(this,  SaleActivity.class);
+                //Bundle bundle = new Bundle();
+                //bundle.putParcelableArrayList("shoppingItems",productList);
+
+                //intent.putParcelableArrayListExtra("shoppingItems", productList);
+               // startActivity(intent);
+
+               startActivity(new Intent(ProductActivity.this, SaleActivity.class));
 
                 return true;
 

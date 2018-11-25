@@ -39,16 +39,39 @@
         <activity
             android:name=".ProductActivity"
             android:label="@string/product_label"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".MainDashboardActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainDashboardActivity" />
         </activity>
-        <activity android:name=".SaleActivity" />
+        <activity android:name=".SaleActivity"
+            android:label="Sale"
+            android:parentActivityName=".ProductActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ProductActivity" />
+        </activity>
         <activity android:name=".MainDashboardActivity" />
-        <activity android:name=".PaymentDetailsActivity" />
-        <activity android:name=".ViewUserTransactions"></activity>
+        <activity android:name=".PaymentDetailsActivity"
+            android:label="Payment"
+            android:parentActivityName=".SaleActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SaleActivity" />
+
+        </activity>
+        <activity android:name=".ViewUserTransactions"
+            android:label="User Transaction"
+            android:parentActivityName=".MainDashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainDashboardActivity" />
+        </activity>
     </application>
 
 </manifest>
